@@ -4,7 +4,7 @@ public class FunctionClass {
     public static void main (String[] args){
         FunctionClass functionClass =  new FunctionClass();
         //Function Reference
-        Function funcRef = functionClass.getFuncInterfaceImpl(); //return implementation of apply method
+        Function funcRef = functionClass.getFuncInterfaceImpl(); //return implementation of Function Interface
 
         Integer returnVal = (Integer) funcRef.apply("kamal");
         System.out.println("returnVal = " + returnVal);

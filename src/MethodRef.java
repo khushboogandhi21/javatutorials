@@ -9,7 +9,7 @@ class derived_class{
     }
 }
 
-public class FuncFeatures {
+public class MethodRef {
     public static void main(String[] args){
 
         derived_class obj1 = new derived_class();

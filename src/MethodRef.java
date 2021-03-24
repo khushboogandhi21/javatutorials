@@ -58,7 +58,8 @@ class derived_class{
 public class MethodRef {
     public static void main(String[] args){
 
-        derived_class obj1 = derived_class::new;   // ClassName::new
+        derived_class obj1 = new derived_class();
+        interface_default obj2 = derived_class::new;   // ClassName::new  LHS should be a functional reference
         interface_default  ref = obj1::classMethod;  // containingObject::instanceMethodName
         // if classMethod was static then containingObject::staticMethodName
         //implementation of classMethod is now pointing to display()

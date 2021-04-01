@@ -4,6 +4,13 @@ import java.util.Optional;
  * It can help in writing a neat code without using too many null checks.
  * By using Optional, we can specify alternate values to return or alternate code to run
  * if value returned from a piece of code/method is null.
+ *
+ * The intent of Java when releasing Optional was to use it as a return type,
+ * thus indicating that a method could return an empty value.
+ * As a matter of fact, the practice of using Optional as a method parameter or Field Type  is even DISCOURAGED by some code inspectors. see section  15 baeldung
+ * coz the arg[of Optional type] passed can be null resulting in null pointer exception
+ *
+ * using Optional in a serializable class will result in a NotSerializableException.
  */
 public class OptionalDemo {
 
@@ -58,8 +65,8 @@ public class OptionalDemo {
 
 
         strOpt = Optional.ofNullable("TestStr"); //value may be null  //MOST RECOMMENDED
-        // the filter method takes a Predicate as FI argument and returns an Optional object with original input value.
-        // If the wrapped value passes testing by the predicate, then the Optional is returned as-is else Optional.empty
+        // the filter method takes a Predicate as FI argument and returns an Optional object with original input value if
+        // the wrapped value passes testing by the predicate, then the Optional is returned as-is else Optional.empty
 
         System.out.println("3 result Filter = " +         strOpt.filter(y->"TestStr".equals(y))   );
         System.out.println("3 result Filter  TestStr111= " +    strOpt.filter(y->"TestStr111".equals(y))   );
@@ -81,6 +88,31 @@ public class OptionalDemo {
         System.out.println("3 result Map  TestStr= " +   strOpt.map(String:: length).filter(y -> y == 88 ).isPresent() );
 
         // map transforms values only when they are unwrapped whereas flatMap takes a wrapped value and unwraps it before transforming it.
+        //so use flatmap if u r going  to get Optional object wrapped in Optional
+
+        Person person1 = new Person(null, 30, "![]{}");
+        Optional<Person> personOptional = Optional.of(person1);
+
+        Optional<Optional<String>> nameWrapper = personOptional.map(Person::getName);
+        Optional<String> nameOpt = nameWrapper.orElse(Optional.empty());
+        String nameVal = nameOpt.orElse("");
+        System.out.println("Map example nameval = " + nameVal);
+
+        //Using flatmap
+        Person person2 = new Person("Kamal", 30, "![]{}");
+        Optional<Person> personOptional2 = Optional.of(person2);
+        Optional<String> nameOpt2 = personOptional2.flatMap(Person::getName);
+        String nameVal2 = nameOpt2.orElse("");
+        System.out.println("flatMap example nameval2 = " + nameVal2);
+
+
+
+
+        /*The release of Java 9 added even more new methods to the Optional API:
+        or() method for providing a supplier that creates an alternative Optional
+        ifPresentOrElse() method that allows executing an action if the Optional is present or another action if not
+        stream() method for converting an Optional to a Stream
+        */
 
 
 

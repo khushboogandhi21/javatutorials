@@ -1,7 +1,4 @@
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
-import java.util.OptionalInt;
+import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -70,8 +67,10 @@ public class StreamReductionDemo {
         List<String> items =
                 Arrays.asList("apple", "apple", "banana",
                         "apple", "orange", "banana", "papaya");
+
         Map<String,Long> mapResult = items.stream().
                 collect(Collectors.groupingBy(Function.identity(),Collectors.counting()));
+        System.out.println("groupingBy:mapResult = " + mapResult);
 
         Map<Long,List<Product>> mapProduct = productList.stream().collect(Collectors.groupingBy(Product :: getPrice));
         System.out.println("groupingBy:mapProduct = " + mapProduct);
@@ -79,6 +78,21 @@ public class StreamReductionDemo {
         //Partition a stream in two parts based on result of predicate
         Map<Boolean,List<Product>> mapPartition = productList.stream().collect(Collectors.partitioningBy(item->item.getPrice() >100));
         System.out.println("partitioningBy:mapPartition = " + mapPartition);
+
+        //another variation
+        Map<Boolean,Long> mapPartition2 = productList.stream().collect(Collectors.partitioningBy(item->item.getPrice()>100,Collectors.counting()));
+        System.out.println("partitioningBy:mapPartition2 = " + mapPartition2);
+
+        //sorted() - Sort a stream
+        items.stream().sorted().forEachOrdered(System.out::println);
+
+        //Sort using a comparator Comparator.comparing introduced in Java 8
+        //The Comparator.comparing static function accepts a sort key Function and
+        // returns a Comparator for the type which contains the sort key
+        productList.stream().sorted(Comparator.comparing(p -> ((Integer) p.id))).forEachOrdered(x->System.out.print(x.getName()+"\t"));
+        //OR
+        // productList.stream().sorted((p1,p2)->{((Integer)p1.id).compareTo((Integer)p2.id))});
+
 
 
     }

@@ -5,10 +5,10 @@ import java.util.Optional;
 public class Optional22Demo {
 
     public static void main(String[]args){
+StreamsCreationDemo obj = new StreamsCreationDemo();
 
-
-        Optional<Streams22Demo> spliteratorOptional = null;
-        Streams22Demo spliteratorObj = null;
+        Optional<StreamsCreationDemo> spliteratorOptional = null;
+        StreamsCreationDemo spliteratorObj = null;
 
         try {
             spliteratorOptional = Optional.empty();  //empty
@@ -30,7 +30,7 @@ public class Optional22Demo {
             ex.printStackTrace();
         }
 
-        spliteratorObj = new Streams22Demo();
+        spliteratorObj = new StreamsCreationDemo();
         try {
             spliteratorOptional = Optional.empty();  //empty
             System.out.println("empty demo=" + spliteratorOptional.get());  //throws java.util.NoSuchElementException

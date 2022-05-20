@@ -1,4 +1,4 @@
-package com.work
+package com.work.year22;
 
 interface interface_default {
     void display();

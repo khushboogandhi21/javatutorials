@@ -3,6 +3,9 @@ package com.work.year22;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
+import java.util.stream.DoubleStream;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class StreamsCreationDemo {
@@ -77,9 +80,21 @@ public class StreamsCreationDemo {
 
         integerStream.forEachOrdered(System.out::println);
 
+       // WAY 7-->Stream.builder()
+        // If type not specified the build() method will create an instance of the Stream<Object>
+        Stream<String> builderStream= Stream.<String>builder().add("Str1").add("Str2").add("Str3").build();
 
+        //WAY 8-->Stream of Primitives
+        //create streams out of three primitive types:
+        //IntStream, LongStream, DoubleStream
+        IntStream primitiveStream = IntStream.range(1,3);
+        primitiveStream.forEach((n)->System.out.println("\nprimitiveStream item = " + n +"\t"));
+        primitiveStream = IntStream.rangeClosed(1,3);
+        primitiveStream.forEach((n)->System.out.println("\nprimitiveStream rangeClosed item = " + n +"\t"));
 
-
+        //WAY 9-->the Random class provides a wide range of methods for generating streams of primitives.
+        Random random = new Random();
+        DoubleStream randomStream = random.doubles(3);
 
 
     }

@@ -1,5 +1,6 @@
 package com.work.year22;
 
+import java.lang.reflect.Array;
 import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -67,10 +68,72 @@ public class CollectorsDemo {
 
 
         //CollectingAndThen is a special collector that allows us to perform another action on a result straight after collecting ends.
-        resultList = strList.stream().collect(Collectors.collectingAndThen(Collectors.toList(),x->{Collections.max(x); return x.stream();})).collect(Collectors.toList());
+        //Here x is collection not element
+        resultList = strList.stream().collect(Collectors.collectingAndThen(Collectors.toList(),x->{Collections.reverse(x); return x.stream();})).collect(Collectors.toList());
+        System.out.println("resultList= " + resultList); //o/p->[home, Jill's, is, that, and, home, Jane's, is, This]
 
         String result = strList.stream().collect(Collectors.joining());  //joins the elements in stream
         System.out.println("result= " + result); //o/p->ThisisJane'shomeandthatisJill'shome
+
+        //Collectors.summarizingDouble/Long/Int()
+        //The static method, Collectors.summarizingDouble() returns a Collector which applies a mapping function to each input element of type T
+        // to convert it to primitive double, and returns summary statistics for the resulting values.
+        DoubleSummaryStatistics doubleSummaryStatistics = strList.stream().collect(Collectors.summarizingDouble(x->x.length()));   //or String::length
+        System.out.println("doubleSummaryStatistics= " + doubleSummaryStatistics);
+
+        // Collectors.averagingDouble/Long/Int()
+        //Collectors.summingDouble/Long/Int()
+        strList.stream().collect(Collectors.averagingDouble(String::length));
+
+        Optional<String> strOptResult = strList.stream().collect(Collectors.maxBy(Comparator.comparing(String::length)));  //It returns an optional  //Comparator.naturalOrder() or Integer::compareTo
+        //Comparator.comparing requires function as input that returns a comparator
+        System.out.println("strOptResult= " + strOptResult);  //returns the first word that has max length
+
+        //Collectors.teeing()Collectors.teeing() in Post java 12
+        //combine two results
+        //NOT WORKING
+//        strList.stream().collect(Collectors.teeing(Collectors.maxBy(Comparator.naturalOrder()),Collectors.minBy(Comparator.naturalOrder()),
+//                (min,max)->{
+//            List<String> tempList = new ArrayList<>();
+////            tempList.add(min.get());
+////            tempList.add(max.get());
+//            return tempList;
+//        }));
+
+        //PartitioningBy is a specialized case of groupingBy that accepts a Predicate instance, and then collects Stream
+        // elements into a Map instance that stores Boolean values as keys and collections as values. Under the “true” key,
+        // we can find a collection of elements matching the given Predicate, and under the “false” key, we can find a
+        // collection of elements not matching the given Predicate.
+        Map<Boolean, List<String>> resultMap  = strList.stream().collect(Collectors.partitioningBy(x->x.length() > 4));  //returns map with partitions true and false of predicate condition
+        System.out.println("resultMap= " + resultMap);
+
+
+        //The key thing to remember is that the function used for transformation in the map() returns a single value.
+        // If map() uses a function, which, instead of returning a single value returns a Stream of values
+        // then you have a Stream of Stream of values, and flatmap() is used to flat that into a Stream of values.
+
+        List<Integer> intList =  Stream.of(2,5,1,23,11).map(x->x * x).collect(Collectors.toList());
+        System.out.println("intList= " + intList );
+
+
+        List<List<Integer>> intDoubleList =  Arrays.asList(Arrays.asList(2,5,1), Arrays.asList(23,11));
+        System.out.println("intDoubleList= " + intDoubleList );
+        intDoubleList = intDoubleList.stream().map(Function.identity()).collect(Collectors.toList());  //Here x is list not Integer so x*x won't work
+        System.out.println("intDoubleList= " + intDoubleList );
+
+        //The flatMap() method first flattens the input Stream of Streams to a Stream of Strings
+        //Thereafter, it works similarly to the map() method.
+        intList = intDoubleList.stream().flatMap(x->x.stream()).collect(Collectors.toList());
+        System.out.println("intList= " + intList );
+
+
+        //Optional map vs flatmap
+        // flatmap does not wrap with additional Optional
+        Student stud = new Student();
+        stud.setStrOpt(Optional.of("Student"));
+        Optional<Student> studOpt = Optional.of(stud);
+        System.out.println("studOpt.map = " + studOpt.map(x->x.getStrOpt()) );
+        System.out.println("studOpt.flatMap = " + studOpt.flatMap(x->x.getStrOpt()) );
 
 
 

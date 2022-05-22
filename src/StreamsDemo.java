@@ -81,7 +81,7 @@ public class StreamsDemo {
         IntStream intStreamOfString = "a,b,c".chars();
         Stream<String> streamOfString =
                 Pattern.compile(", ").splitAsStream("a, b, c");
-        streamOfString.forEach((n)->System.out.print("\nstreamOfString  item = " + n +"\t"));
+        streamOfString.forEach((n)->System.out.println("\nstreamOfString  item = " + n +"\t"));
 
         //Stream of File
         /*Path path = Paths.get("C:\\file.txt");
@@ -104,9 +104,9 @@ public class StreamsDemo {
 
         //If the source of a stream is something other than a Collection or an array, the parallel() method should be used
         primitiveStream = IntStream.rangeClosed(1,5).parallel();
-        System.out.print("\nprimitiveStream is parrallel = " + primitiveStream.isParallel());
+        System.out.println("\nprimitiveStream is parrallel = " + primitiveStream.isParallel());
         primitiveStream.sequential(); //turn back to sequential
-        System.out.print("\nprimitiveStream is parrallel = " + primitiveStream.isParallel());
+        System.out.println("\nprimitiveStream is parrallel = " + primitiveStream.isParallel());
 
 
     }
@@ -121,7 +121,7 @@ public class StreamsDemo {
             return element.contains("2");
         });
         System.out.println("counter Before   = " + counter +"\t");
-        stream.forEach((n)->System.out.print("\nstream  item = " + n +"\t"));
+        stream.forEach((n)->System.out.println("\nstream  item = " + n +"\t"));
         System.out.println("counter After  = " + counter +"\t");
     }
     long counter;

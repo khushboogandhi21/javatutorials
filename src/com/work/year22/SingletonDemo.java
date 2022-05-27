@@ -1,7 +1,7 @@
 package com.work.year22;
 
 public class SingletonDemo {
-    private static volatile SingletonDemo singObj;
+    private static volatile SingletonDemo singObj;  // volatile  ensures that multiple threads offer the obj variable correctly
     //Early Instantiation:
     //private static volatile SingletonDemo singObj = new SingletonDemo();
     private SingletonDemo(){

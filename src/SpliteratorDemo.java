@@ -5,6 +5,7 @@ import java.util.stream.Stream;
 
 public class SpliteratorDemo {
     public static void main(String[] args){
+
         List<Integer> numberList = new ArrayList<>();
         numberList.add(5);
         numberList.add(1);

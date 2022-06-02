@@ -1,4 +1,4 @@
-/**Earlier,If we only use a method of an object in another method,
+package com.work.year21; /**Earlier,If we only use a method of an object in another method,
  * we still have to pass the full object as an argument.
  * Wouldn't it be more practical to just pass the method as an argument?
  * ANSWER:
@@ -41,7 +41,6 @@
 
 //git commit -m "Restructure"
 
-import java.util.Optional;
 interface interface_default {
     void display();
 }

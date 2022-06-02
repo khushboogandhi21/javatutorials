@@ -1,3 +1,5 @@
+package com.work.year21;
+
 public class Product {
 
     String name;

@@ -1,3 +1,5 @@
+package com.work.year21;
+
 import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;

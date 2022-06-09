@@ -1,4 +1,4 @@
-package com.work.year22;
+package com.work.year22.streams;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -89,6 +89,9 @@ public class StreamsCreationDemo {
         //IntStream, LongStream, DoubleStream
         IntStream primitiveStream = IntStream.range(1,3);
         primitiveStream.forEach((n)->System.out.println("\nprimitiveStream item = " + n +"\t"));
+        //OR
+        primitiveStream.forEach(System.out::println);
+
         primitiveStream = IntStream.rangeClosed(1,3);
         primitiveStream.forEach((n)->System.out.println("\nprimitiveStream rangeClosed item = " + n +"\t"));
 

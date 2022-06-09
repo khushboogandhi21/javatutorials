@@ -1,7 +1,8 @@
 package com.work.year22;
 
 public  abstract class Teacher {
-int salary;
+
+        int salary;
 
         private void show() {
             System.out.println("Teacher");

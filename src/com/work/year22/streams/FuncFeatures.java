@@ -1,4 +1,4 @@
-package com.work.year22;
+package com.work.year22.streams;
 
 interface interface_default {
     void display();

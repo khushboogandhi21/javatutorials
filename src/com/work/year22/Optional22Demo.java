@@ -1,11 +1,15 @@
 package com.work.year22;
 
+import com.work.year22.streams.StreamsCreationDemo;
+
+
 import java.util.Optional;
 
 public class Optional22Demo {
 
     public static void main(String[]args){
-StreamsCreationDemo obj = new StreamsCreationDemo();
+
+        StreamsCreationDemo obj = new StreamsCreationDemo();
 
         Optional<StreamsCreationDemo> spliteratorOptional = null;
         StreamsCreationDemo spliteratorObj = null;

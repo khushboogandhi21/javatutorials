@@ -1,4 +1,6 @@
-package com.work.year22;
+package com.work.year22.streams;
+
+import com.work.year22.Student;
 
 import java.lang.reflect.Array;
 import java.util.*;

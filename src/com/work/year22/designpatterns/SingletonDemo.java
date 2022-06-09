@@ -1,4 +1,4 @@
-package com.work.year22;
+package com.work.year22.designpatterns;
 
 public class SingletonDemo {
     private static volatile SingletonDemo singObj;  // volatile  ensures that multiple threads offer the obj variable correctly

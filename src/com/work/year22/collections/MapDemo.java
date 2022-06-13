@@ -8,6 +8,8 @@ public class MapDemo {
 
     public static void main(String[]args) {
 
+        //The IdentityHashMap implements Map interface using Hashtable,
+        // using reference-equality in place of object-equality when comparing keys (and values).
         IdentityHashMap<Integer, String> identityHashMap = new IdentityHashMap<>();
         identityHashMap.put(10, "Ten");
         identityHashMap.put(20, "Twenty");

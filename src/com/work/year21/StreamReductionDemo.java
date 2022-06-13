@@ -24,6 +24,8 @@ public class StreamReductionDemo {
                     System.out.println("a="+a+",b="+b);
                     return a + b;
                 });
+        System.out.println("Reduce:reducedParams = " + reducedParams);  //returns 16
+
         //Above Aggregating Function is not invoked.To make it work, a stream should be parallel:
         //identity value gets added to each value in stream (10 + 1 = 11; 10 + 2 = 12; 10 + 3 = 13;) so Transformation fn runs thrice
         //Aggregating Function runs twice (12+13=25;25+11=36)
@@ -33,7 +35,7 @@ public class StreamReductionDemo {
                     return a + b;
                 });
 
-        System.out.println("Reduce:reducedParams = " + reducedParams);
+        System.out.println("Reduce:reducedParams = " + reducedParams);  //returns 36
 
 
         //collect() -another terminal operation,

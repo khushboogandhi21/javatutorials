@@ -49,7 +49,7 @@ public class PrintOddEven2Threads {
             }
         });
       //OR
-      //  t1 = new Thread(printObj); //where PrintOddEven2Threads implements Runnable and have only one method for printing both[Singe thread approach]
+      //  t1 = new Thread(printObj); //where PrintOddEven2Threads implements Runnable and have only one method for printing both[Single thread approach]
 
         Thread t2 = new Thread(new Runnable(){
             @Override

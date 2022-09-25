@@ -9,7 +9,6 @@ public class StreamsIntvwQns {
 
     public static void main(String[] args){
 
-
         Stream<Integer> intStream = Stream.iterate(0,x->x+1).limit(10);
 
         // find out all the even numbers
@@ -57,7 +56,7 @@ public class StreamsIntvwQns {
 //        str.chars().mapToObj(x->Character.toLowerCase(Character.valueOf((x))).
 //                collect(Collectors.groupingBy(Collectors.groupingBy(Function.identity(),HashMap::new,Collectors.counting())));
 
-        //find the first non-repeated character  //I DIDN'T PRACTICE THIS
+        //find the first non-repeated character  //I DIDN'T PRACTICE THIS  //REFER FirstNonRepeatChar.java with similar solution o Refer Programs List XLS
         Character result = str.chars() // Stream of String
                 .mapToObj(s -> Character.toLowerCase(Character.valueOf((char) s))) // First convert to Character object and then to lowercase
                 .collect(Collectors.groupingBy(Function.identity(), LinkedHashMap::new, Collectors.counting())) //Store the chars in map with count
@@ -71,7 +70,6 @@ public class StreamsIntvwQns {
         System.out.println(result);
 
 
-
         //asc order
         intStream = Stream.iterate(0,x->x+1).limit(10);
         intStream.sorted().forEach(System.out::print);
@@ -81,13 +79,6 @@ public class StreamsIntvwQns {
         intStream = Stream.iterate(0,x->x+1).limit(10);
         intStream.sorted(Comparator.reverseOrder()).forEach(System.out::print);
         //OR Collections.reverseOrder()
-
-
-
-
-
-
-
 
 
 

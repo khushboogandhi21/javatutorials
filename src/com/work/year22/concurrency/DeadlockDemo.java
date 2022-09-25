@@ -9,8 +9,8 @@ public class DeadlockDemo {
         Thread t1 =  new Thread(new Runnable() {
             @Override
             public void run() {
-                s1.displayOne(s2);
-                s2.displayTwo(s1);
+                s1.displayOne(s2);   //acquire lock on s1
+               //s2.displayTwo(s1);  //Not Required
             }
         });
 
@@ -18,7 +18,7 @@ public class DeadlockDemo {
             @Override
             public void run() {
                 s2.displayTwo(s1);
-                s1.displayOne(s2);
+               // s1.displayOne(s2);
             }
         });
 

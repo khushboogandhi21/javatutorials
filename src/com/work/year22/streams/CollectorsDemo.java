@@ -41,7 +41,7 @@ public class CollectorsDemo {
         List<String> strList = Arrays.asList(strArray); //OR You can initialize  List = Arrays.asList("This","is");
         System.out.println("strList= " + strList);
 
-
+        //OR Arrays.stream(strArray) ---better option
         Map<String,Long> resultLongMap = strList.stream().collect(Collectors.groupingBy(Function.identity(),Collectors.counting())); //takes a function argument, Classifier to map in collection
         System.out.println("resultLongMap= " + resultLongMap);
 

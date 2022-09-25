@@ -23,6 +23,7 @@ public class Optional22Demo {
         try{
             spliteratorOptional = Optional.ofNullable(spliteratorObj);  //returns empty if object is null
             System.out.println("ofNullable demo=" + spliteratorOptional.get());  //throws java.util.NoSuchElementException
+            spliteratorOptional.ifPresent(System.out::println); //so use ifPresent before retrieving
         }catch(Exception ex){
             ex.printStackTrace();
         }

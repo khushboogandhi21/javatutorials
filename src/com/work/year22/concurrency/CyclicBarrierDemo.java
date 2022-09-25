@@ -1,7 +1,6 @@
 package com.work.year22.concurrency;
 
 import java.util.concurrent.BrokenBarrierException;
-import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.CyclicBarrier;
 
 public class CyclicBarrierDemo {
@@ -20,7 +19,7 @@ public class CyclicBarrierDemo {
                 fibonacciClass.printFibonacci(20);
                 try{
                     cyclicBarrier.await();
-                }catch(InterruptedException  |BrokenBarrierException ex){
+                }catch(InterruptedException  | BrokenBarrierException ex){
                     System.out.println("Exception caught: " +  ex);
                 }
 
@@ -35,7 +34,7 @@ public class CyclicBarrierDemo {
                 primeNumbers.printPrimeNumbers(20);
                 try{
                     cyclicBarrier.await();
-                }catch(InterruptedException  |BrokenBarrierException ex){
+                }catch(InterruptedException  | BrokenBarrierException ex){
                     System.out.println("Exception caught: " +  ex);
                 }
             }

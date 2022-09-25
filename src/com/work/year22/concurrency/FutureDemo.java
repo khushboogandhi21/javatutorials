@@ -17,7 +17,7 @@ public class FutureDemo {
         String result = null;
         Future future = es.submit(new FutureDemo().new RunnableTask()) ; //takes runnable or callable
         try{
-            System.out.println("Printing result = " + future.get());  //returns null if success
+            System.out.println("Printing result = " + future.get());  //returns null in this case if success
             // es.invokeAll(), invokeAny() takes a collection of callables
         }catch(InterruptedException  |  java.util.concurrent.ExecutionException ex){
             System.out.println("Exception while get=" +ex);

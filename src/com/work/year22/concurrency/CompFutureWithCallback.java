@@ -27,7 +27,7 @@ public class CompFutureWithCallback {
 
         //3
         voidResultFuture = compFuture.thenRun(()->{ System.out.println("Doing some other task");});
-        //CALLBACK METHOD NOT returning value but adding more computation logic IT DOESN'T HOLD PREVIOUS TAK RESULT
+        //CALLBACK METHOD NOT returning value but adding more computation logic IT DOESN'T HOLD PREVIOUS TASK RESULT
 
 
 

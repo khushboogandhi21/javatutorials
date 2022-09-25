@@ -8,10 +8,10 @@ public class ObserverDemo {
         new NewsObserver(subject);
         new TVObserver(subject);
 
-        subject.setState("Weather is 25 decree celsius");
+        subject.setState("Weather is 25 degree celsius");
         subject.notifyAllObservers();
 
-        subject.setState("Weather is 32 decree celsius");
+        subject.setState("Weather is 32 degree celsius");
         subject.notifyAllObservers();
 
 

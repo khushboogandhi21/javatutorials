@@ -90,7 +90,7 @@ public class StreamsCreationDemo {
         IntStream primitiveStream = IntStream.range(1,3);
         primitiveStream.forEach((n)->System.out.println("\nprimitiveStream item = " + n +"\t"));
         //OR
-        primitiveStream.forEach(System.out::println);
+        // primitiveStream.forEach(System.out::println);
 
         primitiveStream = IntStream.rangeClosed(1,3);
         primitiveStream.forEach((n)->System.out.println("\nprimitiveStream rangeClosed item = " + n +"\t"));

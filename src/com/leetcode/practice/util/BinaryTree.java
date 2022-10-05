@@ -1,27 +1,11 @@
-package com.leetcode.practice;
+package com.leetcode.practice.util;
 
 import java.util.LinkedList;
 import java.util.Queue;
 
-/**
- * This s a sample code to create and traverse binary tree from a given array
- *
- */
-class TreeNode {
-
-    int value;
-    TreeNode left;
-    TreeNode right;
-
-    public TreeNode(int value) {
-        this.value = value;
-        this.left = null;
-        this.right = null;
-    }
-}
 public class BinaryTree {
 
-    TreeNode root;
+    public TreeNode root;
 
     public static void main(String[] args){
         BinaryTree binaryTree = new BinaryTree();

@@ -1,4 +1,7 @@
-package com.leetcode.practice;
+package com.leetcode.practice.easy;
+
+import com.leetcode.practice.util.BinaryTree;
+import com.leetcode.practice.util.TreeNode;
 
 /**
  * Given the root of a binary tree, check whether it is a mirror of itself (i.e., symmetric around its center).

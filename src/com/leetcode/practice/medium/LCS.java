@@ -10,9 +10,8 @@ public class LCS {
         int[][] dp = new int[str1.length() + 1][str2.length()+1];
 
         for(int i = 0; i <= str1.length() ; i++){ //<=since size is length +1
+
             for(int j = 0; j <= str2.length() ; j++){
-
-
                 //NO NEED OF first two if since int array def value is 0 In that case loops will start from 1
                 if(i == 0){
                     dp[i][j]  = 0; //since one of the string will be blank no match will be there so zero

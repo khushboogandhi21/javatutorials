@@ -25,6 +25,7 @@ public class BinaryTree {
         return root;
     }
 
+    /** BINARY TREE LEVEL ORDER TRAVERSAL */
     public void traverseLevelOrder(TreeNode root) {
         if (root == null) {
             return;

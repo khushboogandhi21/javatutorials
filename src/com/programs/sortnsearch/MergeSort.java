@@ -19,7 +19,7 @@ public class MergeSort {
         if(low<high){
             int mid = low + (high-low)/2;
 
-            mergeSort(intArr,low, mid );  //NO mid -1
+            mergeSort(intArr,low, mid );  //NO mid -1 as we are not doing binary search here we need to include all elements
             mergeSort(intArr, mid + 1, high);
 
             //MERGE all the sorted arrays
@@ -50,7 +50,7 @@ public class MergeSort {
         int i=0,j=0,k=low; //IMP
         while(i<size1 && j<size2){
             if(tempArr1[i]<tempArr2[j]){
-                intArr[k] = tempArr1[i];
+                intArr[k] = tempArr1[i]; //overwrite elements in original array
                 i++;
             }else{
                 intArr[k] = tempArr2[j];

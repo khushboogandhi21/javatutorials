@@ -19,7 +19,6 @@ import java.util.*;
  *
  *
  * Constraints:
- *
  * 1 <= s.length <= 25
  * s consists of lowercase English letters and parentheses '(' and ')'.
  * There will be at most 20 parentheses in s.

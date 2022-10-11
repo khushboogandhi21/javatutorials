@@ -58,7 +58,7 @@ public class LetterCombinationsOfAPhoneNumber {
 
     private static void helperRecursive(Map<Character,char[]> dict, String digits, int index, char[] charArr, List<String> resultList) {
 
-        if(index == digits.length()){
+        if(index == digits.length()){  //charArr.length won't work
             resultList.add(new String(charArr));  //charArr.toString() not working
             return ;
         }

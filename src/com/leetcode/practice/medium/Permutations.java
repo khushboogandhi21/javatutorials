@@ -55,7 +55,7 @@ public class Permutations {
             for (int i = left; i <= right; i++) {
                 nums = swap(nums, left, i); //left is constant here i will change
                 generatePermute(resultList,nums, left + 1, right); //permute for next char
-                nums = swap(nums, left, i);
+                nums = swap(nums, left, i);  // swap back to return to original string
 
             }
         }

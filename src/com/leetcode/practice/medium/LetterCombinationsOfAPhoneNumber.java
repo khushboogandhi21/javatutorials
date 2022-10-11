@@ -66,7 +66,7 @@ public class LetterCombinationsOfAPhoneNumber {
         char[] dictArr = dict.get(digits.charAt(index));  //first digit of string...next call next digit(index+1)
 
         for(int i = 0;i< dictArr.length;i++){
-            charArr[index] = dictArr[i];  //index will be 0 for all char of that digit in this call...next call it will be +1
+            charArr[index] = dictArr[i];  //index will be 0 for all char of that digit in this call as that many instances/overwrite will be made since recursive...next call it will be +1
             //all characters of current digit will combine with all char of second digit
             helperRecursive(dict,digits,index + 1,charArr, resultList);
         }

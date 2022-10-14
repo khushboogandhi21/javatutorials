@@ -36,11 +36,11 @@ public class RotateArray {
 
     public static void main(String args[]){
 
-        int[] nums = {-1,-100,3,99};
+        int[] nums = {1,2,3,4,5,6,7};
 
         System.out.println("Result is : " );
 
-        rotate(nums,2);
+        rotate(nums,3);
 
         Arrays.stream(nums).forEach(System.out::print);
 
@@ -51,9 +51,15 @@ public class RotateArray {
         //optimise rotations
         k =  k % nums.length;
 
+        //Left Rotation
+        //reverseArray(nums, 0, nums.length - 1); ; //reverse entire array FIRST
+
         reverseArray(nums,  nums.length - k , nums.length - 1) ; //reverse k part
         reverseArray(nums, 0, nums.length - k - 1) ; //reverse arr-k part
-        reverseArray(nums, 0, nums.length - 1); ; //reverse entire array now
+
+        //Right rotation
+        reverseArray(nums, 0, nums.length - 1); ; //reverse entire array LAST
+
     }
 
     private static void reverseArray(int[] nums, int i, int j) {

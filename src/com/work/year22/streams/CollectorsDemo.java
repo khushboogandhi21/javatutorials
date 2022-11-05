@@ -54,9 +54,9 @@ public class CollectorsDemo {
         resultList = strList.stream().collect(Collectors.toCollection(ArrayList::new));
         System.out.println("resultList= " + resultList);
 
-        //Find duplicates in  a string
-        Set<String> resultSet = strList.stream().collect(Collectors.toSet());
-        System.out.println("resultSet= " + resultSet);
+       /* //Find duplicates in  a string --INCORRECT SOLUTION
+        Set<String> resultSet = strList.stream().collect(Collectors.toSet());   // This will collect one occurrence  of any word including duplicates
+        System.out.println("resultSet= " + resultSet); */
 
         //Note that keys are unique and if in any case the keys are duplicated then an IllegalStateException is thrown when the collection operation is performed.
         //Map<String,Integer> resultIntMap = strList.stream().collect(Collectors.toMap(Function.identity(),String::length));  //throws IllegalStateException

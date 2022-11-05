@@ -62,6 +62,23 @@ public class BinaryTreeDetails {
     }
 
 
+    /**The idea is to traverse the tree, starting from root.
+     * For every node, check if its left subtree is a leaf. If it is, then add it to the result.
+     *
+     * @param node
+     * @return
+     */
+    private int sumOfLeftLeaves(Node node) {
+
+        if(node == null)
+            return 0;    /* If node is empty then return 0 */
+
+        if(node.left != null && node.left.left == null && node.left.right == null){  //If left part of node is leaf node calculate value sum and traverse the right
+            return node.left.value + sumOfLeftLeaves(node.right);
+        }
+        return sumOfLeftLeaves(node.left) + sumOfLeftLeaves(node.right);
+    }
+
 
 
     public static void main(String args[]){
@@ -81,7 +98,7 @@ public class BinaryTreeDetails {
         root.right = new Node(3);
         root.left.left = new Node(4);
         root.left.right = new Node(5);
-        root.right.right = new Node(6);
+        root.right.left = new Node(6);
         root.left.left.left = new Node(7);
 
 
@@ -98,6 +115,8 @@ public class BinaryTreeDetails {
         System.out.println("Max Height of Binary tree is:" + binaryTreeDetails.getMaxDepth(root));
         System.out.println("Size of Binary tree is:" + binaryTreeDetails.size(root));
         System.out.println("IsBalanced Binary tree is:" + binaryTreeDetails.isBalanced(root));
+
+        System.out.println("Sum Of Left Leaves for Binary tree is:" + binaryTreeDetails.sumOfLeftLeaves(root));
 
     }
 

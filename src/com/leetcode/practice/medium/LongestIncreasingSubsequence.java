@@ -35,14 +35,14 @@ public class LongestIncreasingSubsequence {
 
     public static int lengthOfLIS(int[] nums) {
 
-        int max = 0;
+        int max = 0;  //keeps track of max subsequence length since there can be many subsequences in array
         int[] LIS = new int[nums.length];
         for(int i =0; i< LIS.length; i++)
             LIS[i] = 1; //LIS for single index is 1
 
         for(int i = 1; i<nums.length; i++){
             for(int j = 0; j< i;j++){
-                if(nums[i] > nums[j] && LIS[i] <= LIS[j]){
+                if(nums[i] > nums[j] && LIS[i] <= LIS[j]){  //LIS[i] <= LIS[j]  U don't want to overwrite an already higher subsequence value
                     LIS[i] = LIS[j] + 1;
                     max = Math.max(max,LIS[i]);
                 }

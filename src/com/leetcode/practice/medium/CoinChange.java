@@ -9,10 +9,10 @@ import java.util.Arrays;
  *
  *
  * Example 1:
- *
  * Input: coins = [1,2,5], amount = 11
  * Output: 3
  * Explanation: 11 = 5 + 5 + 1
+ *
  * Example 2: --Not working
  * Input: coins = [2], amount = 3
  * Output: -1
@@ -44,18 +44,18 @@ public class CoinChange {
 
         if(amount == 0) return 0;
 
-        int ans = Integer.MAX_VALUE;  //Needed since we compare subans with it
+        int ans = Integer.MAX_VALUE;  //Needed since we compare sub answer with it
 
         for(int i = 0;i< coins.length;i++){
             if((amount - coins[i]) >= 0){  //check if its not turning negative
                 int subAns = 0;
                 if(dp[amount - coins[i]] != -1)
-                    subAns =  dp[amount - coins[i]];
+                    subAns =  dp[amount - coins[i]];   //if answer already in dp
                 else
-                    subAns = coinChange(coins, amount - coins[i],dp);
+                    subAns = coinChange(coins, amount - coins[i],dp);  //if answer not in dp find
 
                 if( subAns != Integer.MAX_VALUE && subAns + 1 < ans) //we check to see if the path we are trying, don't lead to overflow or negative value
-                    // also we see if he subAns has been modified other than max value
+                    // also we check if the subAns has been modified other than max value
                     ans = subAns + 1;
 
                 //dp[amount] = ans; //cant have it here coz if the if condtn not satisfied  it wont be assigned

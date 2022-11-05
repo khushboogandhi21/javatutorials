@@ -9,7 +9,7 @@ public class SingletonDemo {
     }
 
     public static  SingletonDemo getSingObj() {
-        if(singObj == null) {  //// Double Checked Locking - Acquire lock only if its null
+        if(singObj == null) {  //// Double-Checked Locking - Acquire lock only if its null
             synchronized (SingletonDemo.class) {
                 if (singObj == null) {
                     singObj = new SingletonDemo();  //lazy Instantiation:

@@ -19,6 +19,7 @@ import java.util.Stack;
     public static int getCelebrity(int[][] arr, int n){
 
         Stack<Integer> stackList = new Stack<>();
+        System.out.println("Default Capacity of Java stack class is:" + stackList.capacity());
         for(int i =0 ; i< n; i++)
             stackList.push(i);
 

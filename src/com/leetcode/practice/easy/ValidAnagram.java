@@ -1,8 +1,10 @@
 package com.leetcode.practice.easy;
 
-import com.leetcode.practice.util.TreeNode;
+/** The ASCII value of the lowercase alphabet is from 97 to 122.
+ * And, the ASCII value of the uppercase alphabet is from 65 to 90.
+*/
 
-public class ValidAnagram {
+ public class ValidAnagram {
 
     public static void main(String args[]){
         int[] arr = {1,2,3,4,5};
@@ -22,7 +24,7 @@ public class ValidAnagram {
 
         for(int i = 0; i< str1.length(); i++){
 
-            intArray[str1.charAt(i)-97] = intArray[str1.charAt(i)-97] + 1;
+            intArray[str1.charAt(i)-97] = intArray[str1.charAt(i)-97] + 1;  //considering characters as lowercase
                 /*97 a
                 98 b ->  97-98 = 1*/
         }

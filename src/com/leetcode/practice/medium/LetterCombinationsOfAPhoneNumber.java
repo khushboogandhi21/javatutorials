@@ -47,11 +47,12 @@ public class LetterCombinationsOfAPhoneNumber {
         dict.put('9',new char[]{'w','x','y','z'});
 
         List<String> resultList = new ArrayList<>();
-        if(digits == null || digits.length() == 0)
+        if(digits == null || digits.length() == 0) //boundary condition
             return resultList;
 
         char[] charArr = new char[digits.length()];
-        helperRecursive(dict,digits,0,charArr, resultList);
+        helperRecursive(dict,digits,0,charArr, resultList); // 0 for first digit of string
+        //charArr stores temp result
 
         return resultList;
     }
@@ -70,7 +71,5 @@ public class LetterCombinationsOfAPhoneNumber {
             //all characters of current digit will combine with all char of second digit
             helperRecursive(dict,digits,index + 1,charArr, resultList);
         }
-
-
     }
 }

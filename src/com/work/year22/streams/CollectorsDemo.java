@@ -24,6 +24,14 @@ public class CollectorsDemo {
 //        System.out.println("collectionData = " + collectionData);
 
 
+        //character count in a string
+        String str1 = "JACKANDJILL";
+
+        //str.length will print total no of characters
+        Map<String,Long> resultMap1 = Arrays.stream(str1.split("")).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+        System.out.println("resultMap1 = " + resultMap1);
+
+
         //Actual code starts here
         List<String> arrList = new ArrayList<>();
         arrList.add("Jack");

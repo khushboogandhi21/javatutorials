@@ -42,6 +42,7 @@ public class Permutations {
         return resultList;
     }
 
+    /** recursive method */
     public static void generatePermute(List<List<Integer>> resultList , int[] nums, int left, int right){
 
         if(left == right){ //one char/integer left
@@ -50,12 +51,11 @@ public class Permutations {
             resultList.add(numList);
             return ;
         }
-
         else {
             for (int i = left; i <= right; i++) {
-                nums = swap(nums, left, i); //left is constant here i will change
+                nums = swap(nums, left, i); //left is constant here i will change, Also we are reassigning nums with the swapped values this will be input to recursive call,that's how left part [0 to left] is also swapped
                 generatePermute(resultList,nums, left + 1, right); //permute for next char
-                nums = swap(nums, left, i);  // swap back to return to original string
+                nums = swap(nums, left, i);  // swap back to return to original string [Backtracking]
 
             }
         }

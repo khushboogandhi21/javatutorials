@@ -52,13 +52,14 @@ public class RotateArray {
         k =  k % nums.length;
 
         //Left Rotation
-        //reverseArray(nums, 0, nums.length - 1); ; //reverse entire array FIRST
-
-        reverseArray(nums,  nums.length - k , nums.length - 1) ; //reverse k part
+       /* reverseArray(nums, 0, nums.length - 1); ; //reverse entire array FIRST
         reverseArray(nums, 0, nums.length - k - 1) ; //reverse arr-k part
+        reverseArray(nums,  nums.length - k , nums.length - 1) ; //reverse k part*/
 
         //Right rotation
-        reverseArray(nums, 0, nums.length - 1); ; //reverse entire array LAST
+        reverseArray(nums, 0, nums.length - 1); ; //reverse entire array FIRST
+        reverseArray(nums,  0 , k - 1) ; //reverse k part
+        reverseArray(nums,  k , nums.length - 1) ; //reverse arr - k part
 
     }
 

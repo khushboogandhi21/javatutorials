@@ -55,12 +55,12 @@ public class RemoveDuplicatesFromSortedArray {
 
     public static int removeDuplicates(int[] nums) {
 
-        int i = 0;
+        int i = 0; //boundary pointer
         int j = 1;
 
         while(j < nums.length){
             if(nums[i] != nums[j]){
-                ++i;
+                i++;
                 nums[i] = nums[j];  //increment ur assumed array pointer to accommodate non duplicate
             }
 

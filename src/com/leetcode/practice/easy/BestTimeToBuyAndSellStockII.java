@@ -49,6 +49,14 @@ public class BestTimeToBuyAndSellStockII {
             }
         }
 
+
+        //OR
+        /*for(int i = 1; i < prices.length ; i++) {  //7,1,5,3,6,4
+            if (prices[i] > prices[i - 1]) {  //consider selling
+                maxProfit += prices[i] - prices[i - 1];  //Here its summation
+            }
+        }*/
+
         return maxProfit;
     }
 }

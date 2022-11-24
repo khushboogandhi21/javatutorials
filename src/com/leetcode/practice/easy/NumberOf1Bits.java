@@ -7,7 +7,8 @@ import java.util.Arrays;
  *
  * Note:
  *
- * Note that in some languages, such as Java, there is no unsigned integer type. In this case, the input will be given as a signed integer type. It should not affect your implementation, as the integer's internal binary representation is the same, whether it is signed or unsigned.
+ * Note that in some languages, such as Java, there is no unsigned integer type. In this case, the input will be given as a signed integer type. It should not affect your implementation,
+ * as the integer's internal binary representation is the same, whether it is signed or unsigned.
  * In Java, the compiler represents the signed integers using 2's complement notation. Therefore, in Example 3, the input represents the signed integer. -3.
  *
  *
@@ -45,7 +46,7 @@ public class NumberOf1Bits {
     public static int hammingWeight(int n) {
         int count = 0;
         while(n != 0){
-            n = n & (n-1);  //1 & 0 = 0
+            n = n & (n-1);  //1 & 0 = 0  //so originally if number is 10[n] doing and operation with 9[n-1] in binary form results in 9[removing 1 bit]
             count++;
         }
         return count;

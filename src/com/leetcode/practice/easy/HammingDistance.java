@@ -33,7 +33,7 @@ public class HammingDistance {
         if( x < 0 ||  y > Integer.MAX_VALUE)   //Integer.MIN_VALUE is -2^32 while Integer.MAX_VALUE is 2^31-1
             return 0;
 
-        int result = x ^ y;  //gives n of different bits in both numbers as 1 ^ 0 = 1
+        int result = x ^ y;  //gives no of different bits in both numbers as 1 ^ 0 = 1
         return NumberOf1Bits.hammingWeight(result);
     }
 }

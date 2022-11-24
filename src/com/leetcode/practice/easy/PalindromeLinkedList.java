@@ -68,7 +68,7 @@ public class PalindromeLinkedList {
         //find middle
         ListNode middle = middle(head);
 
-        if(middle.next == null){
+        if(middle.next == null){ //only one node present in second half
             if (middle.val == head.val)
                 return true;
             else

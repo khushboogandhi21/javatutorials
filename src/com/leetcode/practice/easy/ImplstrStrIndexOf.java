@@ -33,6 +33,8 @@ public class ImplstrStrIndexOf {
     }
 
         public static int strStr(String haystack, String needle) {
+        if(needle == null || needle.length() == 0 || needle.length() >104)
+            return -1;
 
             for(int i = 0; i < haystack.length() - needle.length();i++){
                 int j;
@@ -40,7 +42,7 @@ public class ImplstrStrIndexOf {
                     if(haystack.charAt(i + j ) != needle.charAt(j))
                         break;
                 }
-                if(j    == needle.length() )
+                if(j  == needle.length() )  //if needle found no need to check further
                     return i;
             }
             return -1;

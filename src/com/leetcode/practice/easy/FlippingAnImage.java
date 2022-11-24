@@ -31,7 +31,7 @@ public class FlippingAnImage {
 
     public static void main(String args[]){
 
-        int[][] image = {{1,1,0},{1,0,1},{0,0,0,}}; // Final ->[[1,0,0],[0,1,0],[1,1,1]] //Flip -> [[0,1,1],[1,0,1],[0,0,0]].
+        int[][] image = {{1,1,0,1},{1,0,1,1},{0,0,0,1}}; // Final ->[[1,0,0],[0,1,0],[1,1,1]] //Flip -> [[0,1,1],[1,0,1],[0,0,0]].
 
         System.out.println("Result is : "  );
         flipAndInvertImage(image);
@@ -48,7 +48,7 @@ public class FlippingAnImage {
     public static int[][] flipAndInvertImage(int[][] image) {
 
         for(int i=0; i<image.length; i++) {
-            int j = 0,k=image.length - 1;
+            int j = 0, k=image.length - 1;  //since its n x n  matrix it will work else need to use k = image[i].length - 1
             while(j<k){
                 int temp = image[i][j];
                 image[i][j] = image[i][k];

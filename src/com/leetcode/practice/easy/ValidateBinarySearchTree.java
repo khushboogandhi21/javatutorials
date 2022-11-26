@@ -48,9 +48,7 @@ public class ValidateBinarySearchTree {
         if(max!= null && root.value > max || min != null && root.value < min )
             return false;
 
-        validateBST(root.left, root.value,null);
-        validateBST(root.right, null,root.value);
-
-        return true;
+        boolean result = validateBST(root.left, root.value,null) && validateBST(root.right, null,root.value);
+        return result;
     }
 }

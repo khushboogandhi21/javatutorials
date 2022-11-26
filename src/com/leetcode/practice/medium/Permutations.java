@@ -9,15 +9,14 @@ import java.util.stream.Collectors;
  * Given an array nums of distinct integers, return all the possible permutations. You can return the answer in any order.
  *
  * Example 1:
- *
  * Input: nums = [1,2,3]
  * Output: [[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]
- * Example 2:
  *
+ * Example 2:
  * Input: nums = [0,1]
  * Output: [[0,1],[1,0]]
- * Example 3:
  *
+ * Example 3:
  * Input: nums = [1]
  * Output: [[1]]
  *
@@ -53,8 +52,11 @@ public class Permutations {
         }
         else {
             for (int i = left; i <= right; i++) {
-                nums = swap(nums, left, i); //left is constant here i will change, Also we are reassigning nums with the swapped values this will be input to recursive call,that's how left part [0 to left] is also swapped
+                nums = swap(nums, left, i); //left is constant here i will change, Also we are reassigning nums with
+                // the swapped values this will be input to recursive call,that's how left part [0 to left] is also swapped
+
                 generatePermute(resultList,nums, left + 1, right); //permute for next char
+
                 nums = swap(nums, left, i);  // swap back to return to original string [Backtracking]
 
             }

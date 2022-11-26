@@ -61,7 +61,7 @@ public class PopulatingNextRightPointersInEachNode {
     }
 
     public static Node checkNode(Node root) {
-        if(root == null || root.left == null || root.right == null) return root;
+        if(root == null || root.left == null || root.right == null) return root; // u return root as we need to send it back as result
 
         root.left.next = root.right;
 

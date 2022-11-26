@@ -13,6 +13,7 @@ import java.util.List;
  * Input: intervals = [[1,3],[2,6],[8,10],[15,18]]
  * Output: [[1,6],[8,10],[15,18]]
  * Explanation: Since intervals [1,3] and [2,6] overlap, merge them into [1,6].
+ *
  * Example 2: *
  * Input: intervals = [[1,4],[4,5]]
  * Output: [[1,5]]
@@ -34,7 +35,9 @@ public class MergeIntervals {
 
     public static int[][] merge(int[][] intervals) {
         //int[][] result =  new int[intervals.length][];
+
         Arrays.sort(intervals, (a,b) -> a[0]-b[0]);
+
         List<int[]> resultList = new ArrayList<>();
 
         for(int i = 0; i< intervals.length ; i++) {
@@ -42,7 +45,7 @@ public class MergeIntervals {
             if(i + 1 <  intervals.length && intervals[i][1] >= intervals[i+1][0]){
                 mergeArray[0] = intervals[i][0];
                 mergeArray[1] = intervals[i+1][1];
-                i = ++i;
+                i++;
             }else {
                 mergeArray[0] = intervals[i][0];
                 mergeArray[1] = intervals[i][1];

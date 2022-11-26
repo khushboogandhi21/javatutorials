@@ -1,5 +1,7 @@
 package com.leetcode.practice.medium;
 
+import com.leetcode.practice.util.ListNode;
+
 import javax.print.attribute.standard.OrientationRequested;
 
 /** EXECUTE ON LEETCODE
@@ -59,14 +61,14 @@ import javax.print.attribute.standard.OrientationRequested;
  *
  */
 
-class ListNode {
+/*class ListNode {
       int val;
       ListNode next;
       ListNode(int x) {
           val = x;
           next = null;
       }
-  }
+  }*/
 public class IntersectionOfTwoLinkedLists {
     public static void main(String args[]){
        // listA = [4,1,8,4,5], listB = [5,6,1,8,4,5]

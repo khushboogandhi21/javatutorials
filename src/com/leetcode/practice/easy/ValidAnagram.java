@@ -25,16 +25,21 @@ package com.leetcode.practice.easy;
         for(int i = 0; i< str1.length(); i++){
 
             intArray[str1.charAt(i)-97] = intArray[str1.charAt(i)-97] + 1;  //considering characters as lowercase
+            //OR
+            //intArray[str1.charAt(i)-'a']++;
                 /*97 a
                 98 b ->  97-98 = 1*/
+
+            intArray[str2.charAt(i)-'a']--;
+
         }
 
-        for(int i = 0; i< str2.length(); i++){
+       /* for(int i = 0; i< str2.length(); i++){ //NOT REQUIRED AS CAN USE SAME FOR LOOP AS BOTH STRINGS LENGTH IS SAME
             intArray[str2.charAt(i)-97] = intArray[str2.charAt(i)-97] - 1;
-        }
+        }*/
 
         for(int i = 0; i< intArray.length; i++){
-            if(intArray[i] > 1 || intArray[i] < 0)
+            if(intArray[i] != 0)
                 return false;
         }
 

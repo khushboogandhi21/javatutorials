@@ -39,7 +39,7 @@ public class LongestSubstringWithoutRepeatingCharacters {
     public static int lengthOfLongestSubstring(String str) {
         Set<Character> strSet = new HashSet<>();
         int max = 0;
-        int count = 0;
+        //int count = 0;
 
       /* for(int i = 0; i< str.length(); i++){
             if(strSet.add(str.charAt(i))){
@@ -70,10 +70,10 @@ public class LongestSubstringWithoutRepeatingCharacters {
            // if(!strSet.add(str.charAt(i))){
                 while(strSet.contains(str.charAt(i))){
                     strSet.remove(str.charAt(i));
-                    j++;
+                    j++; //tracks count of repetitive characters
                 }
             //} NOT REQUIRED
-            strSet.add(str.charAt(i));  //add current occurrence
+            strSet.add(str.charAt(i));  //add current occurrence.  Do this after removal to keep at least one occurrence
             max= Math.max(max, i-j + 1); //here count is i-j + 1(add 1 or offset for length)
             i++;
         }

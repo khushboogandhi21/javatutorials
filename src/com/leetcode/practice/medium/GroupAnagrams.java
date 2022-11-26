@@ -46,15 +46,15 @@ public class GroupAnagrams {
             for(int index: intArray){
                 sb.append(index);
             }
-            List arrList = null;
+
 
             String str = sb.toString();
-            if(!resultMap.containsKey(str)){
-                resultMap.put(str, new ArrayList<>() );
-            }
+                if(!resultMap.containsKey(str)){
+                    resultMap.put(str, new ArrayList<>() );
+                }
 
-            // resultMap.put(str, resultMap.get(str).add(strArray[i]) ); Here calling Put not required
-            resultMap.get(str).add(strArray[i]);
+                // resultMap.put(str, resultMap.get(str).add(strArray[i]) ); Here calling Put not required
+                resultMap.get(str).add(strArray[i]);
 
         }
 

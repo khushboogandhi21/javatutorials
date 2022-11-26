@@ -46,10 +46,12 @@ public class DivideTwoIntegers {
         while(dividend >= divisor){
             int count = 0;
             int temp = divisor << 1 << count;
+
             while ((temp) < dividend){
                 count++;
-                temp = divisor << 1 << count;
+                temp = divisor << 1 << count;  //count indicates do divisor << 1  count times ->[divisor * 2] count times
             }
+
             result +=  1 << count; //add 1 << count for the condition of single divisor value(3) since we start checking with doubled divisor(9) 10/3 case
             dividend -= divisor << count;
         }

@@ -15,6 +15,7 @@ import java.util.*;
  * Explanation:
  * A -> B -> idle -> A -> B -> idle -> A -> B
  * There is at least 2 units of time between any two same tasks.
+ *
  * Example 2:
  * Input: tasks = ["A","A","A","B","B","B"], n = 0
  * Output: 6
@@ -24,6 +25,7 @@ import java.util.*;
  * ["B","B","B","A","A","A"]
  * ...
  * And so on.
+ *
  * Example 3:
  * Input: tasks = ["A","A","A","A","A","A","B","C","D","E","F","G"], n = 2
  * Output: 16
@@ -57,7 +59,7 @@ public class TaskScheduler {
         while(!frequencyQ.isEmpty()){
             List<Integer> workerList = new ArrayList<>();
             int time = 0;
-            for(int i =0; i < n+1; i++){
+            for(int i =0; i < n+1; i++){ //task time + cooldown time => 1+ n
                 if(!frequencyQ.isEmpty()){
                     int freq = frequencyQ.poll() - 1;
                     if(freq != 0)
@@ -68,10 +70,10 @@ public class TaskScheduler {
             }
 
             if(!workerList.isEmpty()){
-                frequencyQ.addAll(workerList);
+                frequencyQ.addAll(workerList); //add back remaining tasks since we only decremented freq by 1 and freq still not zero
             }
 
-            if(frequencyQ.isEmpty())
+            if(frequencyQ.isEmpty()) //maybe all tasks executed before n+1
                 result +=time;
             else
                 result += n+1;

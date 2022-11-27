@@ -63,10 +63,10 @@ class RandomizedSet {
         if(randomMap.containsKey(val)){
             int removalIndex = randomMap.get(val);
 
-            indexList.set(removalIndex,indexList.get(indexList.size() - 1) );  //overwrite from last index using set() method NOT add
-            randomMap.put(indexList.get(removalIndex), removalIndex);
+            indexList.set(removalIndex,indexList.get(indexList.size() - 1) );  //overwrite at removal index the value from last index of list using set() method NOT add
+            randomMap.put(indexList.get(removalIndex), removalIndex); //this was the value at last index of the list ...not the one to be removed
 
-            indexList.remove(indexList.size() - 1);
+            indexList.remove(indexList.size() - 1); //now remove the last element which is the value to be deleted
             randomMap.remove(val);
 
             return true;

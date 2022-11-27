@@ -28,7 +28,7 @@ public class DivideTwoIntegers {
 
     public static void main(String args[]){
 
-        System.out.println("Result is : " +divide(10,-2));
+        System.out.println("Result is : " +divide(10,-3));
     }
 
     public static int divide(int dividend, int divisor) {
@@ -36,7 +36,7 @@ public class DivideTwoIntegers {
         if(dividend > (2 << 31) - 1 & divisor == -1) return Integer.MAX_VALUE;
 
 
-        int result = 0;
+        int quotient = 0;
         int sign = (dividend < 0 || divisor < 0) ? -1 : 1;
 
 
@@ -49,13 +49,13 @@ public class DivideTwoIntegers {
 
             while ((temp) < dividend){
                 count++;
-                temp = divisor << 1 << count;  //count indicates do divisor << 1  count times ->[divisor * 2] count times
+                temp = divisor << 1 << count;  //( divisor << 1 => divisor * 2 doubling)  so if count = 1,  3* 2 shifted  1 times = 12//count indicates do divisor << 1  count times ->[divisor * 2] count times
             }
 
-            result +=  1 << count; //add 1 << count for the condition of single divisor value(3) since we start checking with doubled divisor(9) 10/3 case
-            dividend -= divisor << count;
+            quotient +=  1 << count; //(1 shifted count times) //add 1 << count for the condition of single divisor value(3) since we start checking with doubled divisor(9) 10/3 case
+            dividend -= divisor << count; //(divisor shifted count times)  so 3(421=>011) shift by 1 in binary form(4321=>110) is 6(3*2)
         }
 
-        return sign == 1? result : -result; //can't multiply by 1 since can't use multiply operation
+        return sign == 1? quotient : -quotient; //can't multiply by 1 since can't use multiply operation
     }
 }

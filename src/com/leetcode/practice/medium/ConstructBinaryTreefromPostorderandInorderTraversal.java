@@ -44,7 +44,7 @@ public class ConstructBinaryTreefromPostorderandInorderTraversal {
 
         TreeNode root = buildSubTree(0, inorder.length - 1,inorder,0, postorder.length - 1,postorder,inOrderMap);
 
-        traverseBFSLevelOrder(root);
+        traverseBFSLevelOrder(root); //just for printing...not part of logic
 
         return root;
     }
@@ -53,7 +53,7 @@ public class ConstructBinaryTreefromPostorderandInorderTraversal {
 
         if(pstart > pend || istart> iend) return null;
 
-        int rootIndex = inOrderMap.get(postorder[pend]);
+        int rootIndex = inOrderMap.get(postorder[pend]); //end index of left subtree in inorder tree
         int numsLeft = rootIndex - istart; //left part of postOrder
 
         TreeNode root = new TreeNode(postorder[pend]);

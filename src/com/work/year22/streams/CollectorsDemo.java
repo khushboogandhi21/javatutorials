@@ -1,8 +1,7 @@
 package com.work.year22.streams;
 
-import com.work.year22.Student;
+import com.work.year22.Principal;
 
-import java.lang.reflect.Array;
 import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -12,7 +11,7 @@ public class CollectorsDemo {
 
     public static void main(String[] args){
 
-//            Teacher t1 = new Student();
+//            Teacher t1 = new Principal();
 //            t1.show();  //compilation error since it refers to method of t1 and its private
 
 
@@ -139,11 +138,12 @@ public class CollectorsDemo {
 
         //Optional map vs flatmap
         // flatmap does not wrap with additional Optional
-        Student stud = new Student();
-        stud.setStrOpt(Optional.of("Student"));
-        Optional<Student> studOpt = Optional.of(stud);
-        System.out.println("studOpt.map = " + studOpt.map(x->x.getStrOpt()) );
-        System.out.println("studOpt.flatMap = " + studOpt.flatMap(x->x.getStrOpt()) );
+        Principal principal = new Principal();
+        principal.setStrOpt(Optional.of("Principal"));
+
+        Optional<Principal> principalOpt = Optional.of(principal);
+        System.out.println("studOpt.map = " + principalOpt.map(x->x.getStrOpt()) );
+        System.out.println("studOpt.flatMap = " + principalOpt.flatMap(x->x.getStrOpt()) );
 
 
 

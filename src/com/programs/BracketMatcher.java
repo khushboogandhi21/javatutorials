@@ -23,7 +23,7 @@ public class BracketMatcher {
 
         Stack<String> stackMatcher = new Stack<>();
 
-        int popCount = 0;
+        //int popCount = 0;
         for(String s : str.split("")){
             if("(".equals(s)){
                 stackMatcher.push(s);
@@ -31,7 +31,7 @@ public class BracketMatcher {
                 if (stackMatcher.isEmpty()) return false;
                 else{
                     stackMatcher.pop();
-                    popCount++;
+                    //popCount++;
                 }
             }
         }//for ends

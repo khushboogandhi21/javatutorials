@@ -46,7 +46,7 @@ public class MedianOfTwoSortedArrays {
             findMedianSortedArrays(nums2, nums1);
 
 
-        //num1 is shorter array
+        //nums1 is shorter array
         int low1= 0, high1= n1 ;  //not n1-1 since are trying to find median point which is not zero based
 
         int mid1 = 0;
@@ -70,7 +70,7 @@ public class MedianOfTwoSortedArrays {
             midPlusVal2 = mid2 == n2 ? Integer.MAX_VALUE : nums2[mid2];
 
             //check if mid of each array is lesser than mid+1 value of another array
-           if( midVal1 <= midPlusVal2 & midVal2 <= midPlusVal1){ //if correct find median
+           if( midVal1 <= midPlusVal2 && midVal2 <= midPlusVal1){ //if correct find median
                if( (n1 + n2) % 2 ==0){  //if even total of n1+n2 then median sum of two nos /2  so max from left partition and  min from right partition
                    return (Math.max(midVal1,midVal2) + Math.min(midPlusVal1,midPlusVal2)) / 2.0;
                }else{

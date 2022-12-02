@@ -2,7 +2,7 @@ package com.work.year22;
 
 import java.util.Optional;
 
-public class Student extends Teacher {
+public class Principal extends Teacher {
     public Optional<String> getStrOpt() {
         return strOpt;
     }

@@ -33,7 +33,7 @@ public class GenerateParentheses {
         /*if(openBrackets > n || closedBrackets > openBrackets)
         return;*/ //working but confusing with limit condition
 
-        if(openBrackets == n && closedBrackets ==n) {
+        if(openBrackets == n && closedBrackets ==n) { //can't go for openBrackets == closedBrackets as it can be less than n
             result.add(str.toString());
             return ;
         }
